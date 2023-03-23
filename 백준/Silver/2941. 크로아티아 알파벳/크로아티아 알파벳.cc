@@ -6,46 +6,41 @@
 #include <queue>
 #include <stack>
 #include <deque>
+
 using namespace std;
 
 int main(void)
 {
 	ios::sync_with_stdio(0);
 	cin.tie(0);
-	string str;
-	cin >> str;
-	int num = 0;
-	int i = 0;
-	for(int i=0; i<str.length(); i++) {
-		if (str[i] == 'c') {
-			if (str[i + 1] == '=')
-				i++;
-			else if (str[i + 1] == '-')
+	string s;
+	cin >> s;
+	int cnt = 0;
+	for (int i = 0; i < s.length(); i++)
+	{
+		if (s[i] == 'c') {
+			if (s[i + 1] == '=' || s[i + 1] == '-')
 				i++;
 		}
-		else if (str[i] == 'd') {
-			if (str[i + 1] == '-')
+
+		else if (s[i] == 'd') {
+			if (s[i + 1] == '-')
 				i++;
-			else if (str[i + 1] == 'z'&&str[i + 2] == '=')
+			else if (s[i + 1] == 'z' && s[i + 2] == '=')
 				i += 2;
 		}
-		else if (str[i] == 'l') {
-			if (str[i + 1] == 'j') 
+
+		else if (s[i] == 'l' || s[i] == 'n') {
+			if (s[i + 1] == 'j')
 				i++;
 		}
-		else if (str[i] == 'n') {
-			if (str[i + 1] == 'j')
+
+		else if (s[i] == 's' || s[i] == 'z') {
+			if (s[i + 1] == '=')
 				i++;
 		}
-		else if (str[i] == 's') {
-			if (str[i + 1] == '=') 
-				i++;
-		}
-		else if (str[i] == 'z') {
-			if (str[i + 1] == '=')
-				i++;
-		}
-		num++;
+		cnt++;
 	}
-    cout<<num;
+	cout << cnt;
+	return 0;
 }
