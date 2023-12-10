@@ -9,8 +9,7 @@
 
 using namespace std;
 
-int a[100005];
-long long s[100005];
+int s[100005];
 
 int main(void)
 {
@@ -20,8 +19,9 @@ int main(void)
     int n, m;
     cin >> n >> m;
     for (int i = 1; i <= n; i++) {
-        cin >> a[i];
-        s[i] = s[i - 1] + a[i];
+        int x;
+        cin >> x; 
+        s[i] = s[i - 1] + x;
     }
     for (int i = 0; i < m; i++) {
         int start, end;
