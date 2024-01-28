@@ -10,8 +10,8 @@
 
 using namespace std;
 #define ll long long
-ll arr[100001];
-ll sum[100001]; // s[i]는 arr[0~i]까지의 합
+int arr[100001];
+int sum[100001]; // s[i]는 arr[0~i]까지의 합
 int main(void)
 {
     cin.tie(0);
@@ -31,7 +31,7 @@ int main(void)
     int min = 100005;
     int st = 1, en = 1;
     while (st <= en && en <= n) {
-        ll tmp = sum[en] - sum[st-1]; // st부터 en까지의 합
+        int tmp = sum[en] - sum[st-1]; // st부터 en까지의 합
         if (tmp >= s) {
             if (en - st + 1 < min)min = en - (st-1);
             st++;
